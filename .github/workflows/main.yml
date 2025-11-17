@@ -8,51 +8,56 @@ on:
 env:
   IMAGE_NAME: mohamedmotaz350/finalapplication
   K8S_MANIFEST_DIR: k8s
-  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-  DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
 jobs:
-  build_and_deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+     
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
+ 
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
 
-    - name: Log in to DockerHub
-      uses: docker/login-action@v2
-      with:
-        username: ${{ env.DOCKERHUB_USERNAME }}
-        password: ${{ env.DOCKERHUB_TOKEN }}
-
-    - name: Build Docker Image
-      run: |
-        docker build -t $IMAGE_NAME:latest .
     
-    - name: Scan Image using Trivy
-      uses: aquasecurity/trivy-action@master
-      with:
-        image-ref: ${{ env.IMAGE_NAME }}:latest
+      - name: Build Docker Image
+        run: docker build -t $IMAGE_NAME:latest .
 
-    - name: Push Image to DockerHub
-      run: |
-        docker push $IMAGE_NAME:latest
+      
+      - name: Scan Image using Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: $IMAGE_NAME:latest
 
-    - name: Delete Local Image
-      run: |
-        docker rmi $IMAGE_NAME:latest
+     
+      - name: Log in to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Update K8s manifests
-      run: |
-        sed -i "s|image:.*|image: $IMAGE_NAME:latest|" $K8S_MANIFEST_DIR/deployment.yaml
+      - name: Push Docker Image
+        run: docker push $IMAGE_NAME:latest
 
-    - name: Commit and Push Updated Manifests
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add $K8S_MANIFEST_DIR/deployment.yaml
-        git diff --cached --quiet || git commit -m "Update manifests with latest image"
-        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/mohamedmotaz285/CloudDevOpsProject.git HEAD:main
+      
+      - name: Delete local image
+        run: docker rmi $IMAGE_NAME:latest
+
+    
+      - name: Update Manifests
+        run: |
+          sed -i "s|image: .*|image: $IMAGE_NAME:latest|g" $K8S_MANIFEST_DIR/deployment.yaml
+
+     
+      - name: Commit and Push Updated Manifests
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add $K8S_MANIFEST_DIR/deployment.yaml
+          git commit -m "Update manifests with latest image" || echo "No changes to commit"
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/mohamedmotaz285/CloudDevOpsProject.git main
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
