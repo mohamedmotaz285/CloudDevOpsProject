@@ -54,7 +54,7 @@ jobs:
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
         git add $K8S_MANIFEST_DIR/deployment.yaml
-        git commit -m "Update manifests with latest image"
+        git diff --cached --quiet || git commit -m "Update manifests with latest image"
         git push
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
