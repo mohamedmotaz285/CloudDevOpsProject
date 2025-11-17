@@ -58,6 +58,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           git add $K8S_MANIFEST_DIR/deployment.yaml
           git commit -m "Update manifests with latest image" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/mohamedmotaz285/CloudDevOpsProject.git main
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          git push https://$GH_PAT@github.com/mohamedmotaz285/CloudDevOpsProject.git HEAD:main
+
+       
