@@ -30,7 +30,7 @@ jobs:
       - name: Scan Image using Trivy
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: $IMAGE_NAME:latest
+          image-ref: ${{ env.IMAGE_NAME }}:latest
 
      
       - name: Log in to DockerHub
