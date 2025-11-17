@@ -59,5 +59,7 @@ jobs:
           git add $K8S_MANIFEST_DIR/deployment.yaml
           git commit -m "Update manifests with latest image" || echo "No changes to commit"
           git push https://$GH_PAT@github.com/mohamedmotaz285/CloudDevOpsProject.git HEAD:main
-
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          K8S_MANIFEST_DIR: k8s
        
