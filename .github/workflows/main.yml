@@ -45,14 +45,15 @@ jobs:
         run: |
           sed -i "s|image: .*|image: $IMAGE_NAME:latest|g" $K8S_MANIFEST_DIR/$K8S_DEPLOYMENT_FILE
 
+
       - name: Commit and push deployment update
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-          git add $K8S_MANIFEST_DIR/$K8S_DEPLOYMENT_FILE
-          git commit -m "Update manifests with latest image" || echo "No changes to commit"
-          git push https://$GH_PAT@github.com/mohamedmotaz285/CloudDevOpsProject.git HEAD:main
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: "Update image to ${{ env.IMAGE_NAME }}:latest [skip ci]"
+          push: true
+          branch: main
+          add: ${{ env.K8S_MANIFEST_DIR }}/${{ env.K8S_DEPLOYMENT_FILE }}
 
        
