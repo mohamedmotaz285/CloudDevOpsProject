@@ -39,7 +39,7 @@ k8s/
 
 ### 📸 Screenshots
 
-(![Uploading Screenshot 2025-11-19 203251.png…]()
+(![Screenshot 2025-11-19 203251.png]()
 
 ---
 
