@@ -39,10 +39,7 @@ k8s/
 
 ### 📸 Screenshots
 
-![Kubernetes Deployment](![Uploading Screenshot 2025-11-19 203251.png…]()
-)
-
-> Replace `PLACEHOLDER_IMAGE_URL` with a screenshot showing your deployed pods, services, or the dashboard view.
+(![Uploading Screenshot 2025-11-19 203251.png…]()
 
 ---
 
