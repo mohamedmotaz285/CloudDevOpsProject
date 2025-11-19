@@ -168,4 +168,4 @@ GitHub: [mohamedmotaz285](https://github.com/mohamedmotaz285)
 
 ---
 
-This README provides a **visual, step-by-step guide** for deploying and maintaining CloudDevOpsProject using modern DevOps practices. 🌟
+This README provides a **visual, step-by-step guide** for deploying and maintaining CloudDevOpsProject using modern DevOps practices.  🌟
