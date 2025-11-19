@@ -1,33 +1,63 @@
-# CloudDevOpsProject
+![CloudDevOpsProject Banner](assets/banner.png)
 
-## Project Overview
+# ☁️💻 CloudDevOpsProject
 
-CloudDevOpsProject is a full-stack Cloud and DevOps project that demonstrates infrastructure provisioning, containerization, and continuous deployment. The project deploys a Python-based application on AWS EKS using Terraform for infrastructure, Docker for containerization, and Kubernetes manifests for deployment.
+*A full-stack Cloud & DevOps application with CI/CD, Terraform, Docker, Kubernetes & ArgoCD*
 
-## Technologies Used
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mohamedmotaz285/CloudDevOpsProject/ci-cd.yml?branch=main)
+![Docker Pulls](https://img.shields.io/docker/pulls/mohamedmotaz350/finalapplication)
+![License](https://img.shields.io/github/license/mohamedmotaz285/CloudDevOpsProject)
 
-* **Cloud Provider:** AWS
-* **Containerization:** Docker
-* **Orchestration:** Kubernetes (EKS)
-* **Infrastructure as Code:** Terraform
-* **CI/CD:** GitHub Actions + ArgoCD
-* **Programming Language:** Python
-* **Namespace:** `ivolve`
+---
 
-## Repository Structure
+## 📝 Project Overview
+
+CloudDevOpsProject is a full-stack Cloud and DevOps project demonstrating infrastructure provisioning, containerization, and continuous deployment. The application is deployed on AWS EKS using Terraform, Docker, and Kubernetes manifests.
+
+---
+
+## ⚙️ Technologies Used
+
+| Component     | Tool / Version         |
+| ------------- | ---------------------- |
+| Cloud         | AWS                    |
+| IaC           | Terraform 1.5          |
+| Container     | Docker 24.x            |
+| Orchestration | Kubernetes 1.28        |
+| CI/CD         | GitHub Actions, ArgoCD |
+| App Lang      | Python 3.11            |
+
+---
+
+## 🏗️ Terraform Infrastructure
+
+The infrastructure is provisioned using **Terraform**, ensuring reproducibility and scalability.
+
+### Repository Structure (`terraform/`)
 
 ```
-CloudDevOpsProject/
-├── terraform/            # Terraform scripts for VPC, Subnets, EKS cluster, Node Group
-├── k8s/                  # Kubernetes manifests: deployment.yaml, service.yaml, namespace.yaml
-├── app.py                # Python web application
-├── dockerfile            # Dockerfile to build application image
-├── templates/            # HTML templates for the app
-├── static/               # Static assets (CSS, JS)
-└── .github/workflows/    # GitHub Actions workflows for CI/CD
+terraform/
+├── backend.tf
+├── main.tf
+├── outputs.tf
+├── terraform.tfvars
+├── variables.tf
+├── modules/
+│   └── eks/
+├── network/
+└── server/
 ```
 
-## Infrastructure Details
+### Provisioning Steps
+
+```bash
+cd terraform
+terraform init
+terraform plan
+terraform apply
+```
+
+### Infrastructure Details
 
 * **EKS Cluster Endpoint:** `https://5106C033A370D6A25C23002D0ADDE38C.gr7.us-east-1.eks.amazonaws.com`
 * **Cluster Name:** `clouddevops-eks-cluster`
@@ -37,88 +67,97 @@ CloudDevOpsProject/
 * **Private Subnets:** `subnet-09f159c005c055b6c`, `subnet-05510b0d3a5b11e09`
 * **Server Public IP:** `44.204.107.227`
 
-## Setup & Deployment
+📸 Screenshot / Diagram:
+![Terraform Infrastructure](assets/terraform.png)
 
-### Local Setup
+---
 
-1. Clone the repository:
+## ☸️ Kubernetes Deployment
 
-   ```bash
-   git clone https://github.com/mohamedmotaz285/CloudDevOpsProject.git
-   cd CloudDevOpsProject
-   ```
-2. Create a Python virtual environment and install dependencies:
+The application is deployed to Kubernetes using manifests in `k8s/`.
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-3. Run the application locally:
+### Deployment Steps
 
-   ```bash
-   python app.py
-   ```
+```bash
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+kubectl get pods -n ivolve
+kubectl get svc -n ivolve
+```
 
-   Access it at `http://localhost:5000`
+📸 Screenshot:
+![Kubernetes Deployment](assets/k8s_dashboard.png)
 
-### Docker
+---
 
-1. Build Docker image:
+## 🐳 Docker
 
-   ```bash
-   docker build -t clouddevopsproject:latest -f dockerfile .
-   ```
-2. Run the Docker container:
+### Build & Run
 
-   ```bash
-   docker run -p 5000:5000 clouddevopsproject:latest
-   ```
+```bash
+docker build -t clouddevopsproject:latest -f dockerfile .
+docker run -p 5000:5000 clouddevopsproject:latest
+```
 
-### Kubernetes Deployment
+📸 Screenshot:
+![Docker Container](assets/docker.png)
 
-1. Apply the namespace:
+---
 
-   ```bash
-   kubectl apply -f k8s/namespace.yaml
-   ```
-2. Deploy the application:
+## ⚡ GitHub Actions CI/CD Pipeline
 
-   ```bash
-   kubectl apply -f k8s/deployment.yaml
-   kubectl apply -f k8s/service.yaml
-   ```
-3. Access the service via the LoadBalancer IP.
+Automates build, scan, and deployment to Kubernetes.
 
-### Terraform (Infrastructure Provisioning)
+### Steps Overview
 
-1. Navigate to the Terraform folder:
+1. Checkout repo
+2. Setup Docker
+3. Build Docker image
+4. Scan image with Trivy
+5. Login to DockerHub
+6. Push image
+7. Delete local image
+8. Update Kubernetes manifests
+9. Commit & push deployment update
 
-   ```bash
-   cd terraform
-   terraform init
-   terraform plan
-   terraform apply
-   ```
+📸 Screenshot:
+![GitHub Actions Workflow](assets/github_actions.png)
 
-   This will provision VPC, subnets, EKS cluster, and node group.
+---
 
-## CI/CD
+## 🚀 ArgoCD Deployment
 
-* GitHub Actions automates build, test, and Docker image push.
-* ArgoCD handles automatic deployment to EKS cluster.
+* **Repository:** `https://github.com/mohamedmotaz285/CloudDevOpsProject.git`
+* **Branch:** `main`
+* **Application Name:** `devops`
+* **Namespace:** `ivolve`
+* **Sync Policy:** Auto-sync ✅
 
-## Notes
+### Steps
 
-* Ensure AWS credentials are configured for Terraform and kubectl.
-* Do not store secrets or sensitive data directly in the repository.
-* Environment variables may be required for app configuration.
+```bash
+argocd app sync devops
+```
 
-## Author
+📸 Screenshot:
+![ArgoCD Dashboard](assets/argocd.png)
+
+---
+
+## ⚠️ Notes
+
+> Ensure AWS credentials are configured for Terraform and kubectl.
+> Environment variables may be required for app configuration.
+> Do not store secrets or sensitive data directly in the repository.
+
+---
+
+## 🧑‍💻 Author
 
 **Mohamed Motaz**
 GitHub: [mohamedmotaz285](https://github.com/mohamedmotaz285)
 
 ---
 
-CloudDevOpsProject showcases a full DevOps workflow from infrastructure provisioning to automated deployment on a Kubernetes cluster.
+This README provides a **visual, step-by-step guide** for deploying and maintaining CloudDevOpsProject using modern DevOps practices. 🌟
