@@ -101,7 +101,8 @@ docker run -p 5000:5000 clouddevopsproject:latest
 ```
 
 📸 Screenshot:
-![Docker Container](assets/docker.png)
+![Docker Container](![Uploading WhatsApp Image 2025-11-19 at 10.19.25 PM.jpeg…]()
+)
 
 ---
 
