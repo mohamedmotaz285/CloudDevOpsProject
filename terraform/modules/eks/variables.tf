@@ -17,7 +17,7 @@ variable "private_subnets" {
 
 variable "instance_types" {
   type        = list(string)
-  default     = ["t3.micro"]  
+  default     = ["t3.medium"]  
 }
 
 variable "desired_capacity" {
@@ -32,7 +32,7 @@ variable "min_size" {
 
 variable "max_size" {
   type        = number
-  default     = 3
+  default     = 4
 }
 
 variable "tags" {
