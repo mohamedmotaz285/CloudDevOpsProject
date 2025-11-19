@@ -1,4 +1,5 @@
-<img width="1600" height="732" alt="WhatsApp Image 2025-11-19 at 10 19 25 PM" src="https://github.com/user-attachments/assets/8cd6bc10-4d38-4933-b32a-33295c3ca596" />![CloudDevOpsProject Banner](assets/banner.png)
+![Uploading Screenshot 2025-11-19 203251.png…]()
+
 
 # ☁️💻 CloudDevOpsProject
 
