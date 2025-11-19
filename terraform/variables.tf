@@ -62,7 +62,7 @@ variable "eks_cluster_name" {
 variable "eks_instance_types" {
   
   type        = list(string)
-  default     = ["t3.micro"]
+  default     = ["t3.medium"]
 }
 
 variable "eks_desired_capacity" {
@@ -80,7 +80,7 @@ variable "eks_min_size" {
 variable "eks_max_size" {
   
   type        = number
-  default     = 3
+  default     = 4
 }
 
 variable "tags" {
