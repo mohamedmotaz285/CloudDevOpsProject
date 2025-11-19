@@ -32,12 +32,12 @@ terraform/
 3. Preview the planned infrastructure:
 
    ```bash
-   terraform plan
+   terraform plan -var-file='terraform.tfvars'
    ```
 4. Apply the configuration to provision resources:
 
    ```bash
-   terraform apply
+   terraform apply -var-file='terraform.tfvars'
    ```
 5. Verify resources in AWS:
 
