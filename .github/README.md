@@ -1,4 +1,4 @@
-![Uploading Screenshot 2025-11-19 203251.png…]()
+<img width="1920" height="1020" alt="Screenshot 2025-11-19 203251" src="https://github.com/user-attachments/assets/1579b99e-737e-4bf1-a8da-f90509dc0832" />
 
 
 # ☁️💻 CloudDevOpsProject
@@ -44,9 +44,9 @@ terraform/
 ├── terraform.tfvars
 ├── variables.tf
 ├── modules/
-│   └── eks/
-├── network/
-└── server/
+   └── eks/
+   └── network/
+   └── server/
 ```
 
 ### Provisioning Steps
@@ -88,7 +88,8 @@ kubectl get svc -n ivolve
 ```
 
 📸 Screenshot:
-![Kubernetes Deployment](assets/k8s_dashboard.png)
+![Kubernetes Deployment](<img width="984" height="266" alt="WhatsApp Image 2025-11-19 at 10 40 04 PM" src="https://github.com/user-attachments/assets/9dd10bf8-6617-495f-8958-22d1ecb22ac6" />
+)
 
 ---
 
@@ -104,6 +105,8 @@ docker run -p 5000:5000 clouddevopsproject:latest
 📸 Screenshot:
 ![Docker Container](<img width="1600" height="732" alt="WhatsApp Image 2025-11-19 at 10 19 25 PM" src="https://github.com/user-attachments/assets/3dd08a43-dbce-44d5-bd78-148f7984f116" />
 
+)
+![Docker Container](<img width="1600" height="732" alt="WhatsApp Image 2025-11-19 at 10 22 50 PM" src="https://github.com/user-attachments/assets/736fd936-a5ba-44fd-9983-e1752f572732" />
 )
 
 ---
@@ -125,7 +128,8 @@ Automates build, scan, and deployment to Kubernetes.
 9. Commit & push deployment update
 
 📸 Screenshot:
-![GitHub Actions Workflow](assets/github_actions.png)
+![GitHub Actions Workflow](<img width="1920" height="1020" alt="Screenshot 2025-11-19 220325" src="https://github.com/user-attachments/assets/11a30e9b-a61c-4187-92d7-c619ede3877e" />
+)
 
 ---
 
@@ -144,7 +148,8 @@ argocd app sync devops
 ```
 
 📸 Screenshot:
-![ArgoCD Dashboard](assets/argocd.png)
+![ArgoCD Dashboard](<img width="1600" height="732" alt="WhatsApp Image 2025-11-19 at 10 20 16 PM" src="https://github.com/user-attachments/assets/24409f90-d764-4248-b431-635382944da5" />
+)
 
 ---
 
