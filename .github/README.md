@@ -71,7 +71,7 @@ The **CI/CD pipeline** is fully automated using **GitHub Actions** to build, sca
 
 ### 📸 Screenshot
 
-![GitHub Actions Workflow](<img width="1920" height="1020" alt="Screenshot 2025-11-19 220314" src="https://github.com/user-attachments/assets/44baf615-ff80-430b-902b-abaa6c43ea4b" />
+(<img width="1920" height="1020" alt="Screenshot 2025-11-19 220314" src="https://github.com/user-attachments/assets/44baf615-ff80-430b-902b-abaa6c43ea4b" />
 )
 
 ---
