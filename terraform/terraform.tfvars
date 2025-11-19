@@ -13,7 +13,7 @@ server_allowed_ssh_cidrs = ["0.0.0.0/0"]
 
 
 eks_cluster_name    = "clouddevops-eks-cluster"
-eks_instance_types  = ["t3.micro"]
+eks_instance_types  = ["t3.medium"]
 eks_desired_capacity = 2
 eks_min_size        = 1
 eks_max_size        = 4
