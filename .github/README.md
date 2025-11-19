@@ -1,80 +1,163 @@
-## ⚡ GitHub Actions CI/CD Pipeline
+![CloudDevOpsProject Banner](assets/banner.png)
 
-The **CI/CD pipeline** is fully automated using **GitHub Actions** to build, scan, and deploy the Dockerized application to the Kubernetes cluster.
+# ☁️💻 CloudDevOpsProject
 
-### 📝 Workflow Overview
+*A full-stack Cloud & DevOps application with CI/CD, Terraform, Docker, Kubernetes & ArgoCD*
 
-* **Workflow Name:** `CI/CD Pipeline`
-* **Trigger:** On push to the `main` branch
-* **Environment Variables:**
-
-  * `IMAGE_NAME`: Docker Hub image (`mohamedmotaz350/finalapplication`)
-  * `K8S_MANIFEST_DIR`: `k8s`
-  * `K8S_DEPLOYMENT_FILE`: `deployment.yaml`
-
-### 🛠 Pipeline Steps
-
-1. **Checkout Repository** 📥
-   Pulls the latest code from the `main` branch.
-
-   ```yaml
-   uses: actions/checkout@v3
-   ```
-
-2. **Set up Docker** 🐳
-   Prepares the Docker environment to build images.
-
-   ```yaml
-   uses: docker/setup-buildx-action@v2
-   ```
-
-3. **Build Docker Image** 🏗️
-   Builds the Docker image using the Dockerfile in the repo.
-
-   ```bash
-   docker build -t $IMAGE_NAME:latest .
-   ```
-
-4. **Scan Image using Trivy** 🔍
-   Ensures the Docker image is secure by scanning for vulnerabilities.
-
-   ```yaml
-   uses: aquasecurity/trivy-action@0.20.0
-   ```
-
-5. **Log in to DockerHub** 🔑
-   Authenticates using secrets (`DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`).
-
-6. **Push Docker Image** ⬆️
-   Pushes the built image to Docker Hub.
-
-   ```bash
-   docker push $IMAGE_NAME:latest
-   ```
-
-7. **Delete Local Image** 🗑️
-   Cleans up local Docker images to save space.
-
-   ```bash
-   docker rmi $IMAGE_NAME:latest
-   ```
-
-8. **Update Kubernetes Manifests** ✏️
-   Updates the deployment manifest to use the new Docker image.
-
-   ```bash
-   sed -i "s|image: .*|image: $IMAGE_NAME:latest|g" $K8S_MANIFEST_DIR/$K8S_DEPLOYMENT_FILE
-   ```
-
-9. **Commit & Push Deployment Update** 💾
-   Automatically commits the updated deployment file and pushes it back to GitHub (skip CI to avoid loop).
-
-### 📸 Screenshot
-
-![GitHub Actions Workflow](PLACEHOLDER_IMAGE_URL)
-
-> Replace `PLACEHOLDER_IMAGE_URL` with your screenshot of the GitHub Actions workflow run.
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mohamedmotaz285/CloudDevOpsProject/ci-cd.yml?branch=main)
+![Docker Pulls](https://img.shields.io/docker/pulls/mohamedmotaz350/finalapplication)
+![License](https://img.shields.io/github/license/mohamedmotaz285/CloudDevOpsProject)
 
 ---
 
-This pipeline ensures **continuous integration and deployment** of the CloudDevOpsProject app, keeping your EKS cluster updated automatically whenever changes are pushed to the `main` branch. 🌟
+## 📝 Project Overview
+
+CloudDevOpsProject is a full-stack Cloud and DevOps project demonstrating infrastructure provisioning, containerization, and continuous deployment. The application is deployed on AWS EKS using Terraform, Docker, and Kubernetes manifests.
+
+---
+
+## ⚙️ Technologies Used
+
+| Component     | Tool / Version         |
+| ------------- | ---------------------- |
+| Cloud         | AWS                    |
+| IaC           | Terraform 1.5          |
+| Container     | Docker 24.x            |
+| Orchestration | Kubernetes 1.28        |
+| CI/CD         | GitHub Actions, ArgoCD |
+| App Lang      | Python 3.11            |
+
+---
+
+## 🏗️ Terraform Infrastructure
+
+The infrastructure is provisioned using **Terraform**, ensuring reproducibility and scalability.
+
+### Repository Structure (`terraform/`)
+
+```
+terraform/
+├── backend.tf
+├── main.tf
+├── outputs.tf
+├── terraform.tfvars
+├── variables.tf
+├── modules/
+│   └── eks/
+├── network/
+└── server/
+```
+
+### Provisioning Steps
+
+```bash
+cd terraform
+terraform init
+terraform plan
+terraform apply
+```
+
+### Infrastructure Details
+
+* **EKS Cluster Endpoint:** `https://5106C033A370D6A25C23002D0ADDE38C.gr7.us-east-1.eks.amazonaws.com`
+* **Cluster Name:** `clouddevops-eks-cluster`
+* **Node Group Name:** `clouddevops-eks-nodes`
+* **VPC ID:** `vpc-013065ced72870b6d`
+* **Public Subnets:** `subnet-0c636f3c2d048c4e2`, `subnet-0108ccd0d24b5d8a9`
+* **Private Subnets:** `subnet-09f159c005c055b6c`, `subnet-05510b0d3a5b11e09`
+* **Server Public IP:** `44.204.107.227`
+
+📸 Screenshot / Diagram:
+![Terraform Infrastructure](assets/terraform.png)
+
+---
+
+## ☸️ Kubernetes Deployment
+
+The application is deployed to Kubernetes using manifests in `k8s/`.
+
+### Deployment Steps
+
+```bash
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+kubectl get pods -n ivolve
+kubectl get svc -n ivolve
+```
+
+📸 Screenshot:
+![Kubernetes Deployment](assets/k8s_dashboard.png)
+
+---
+
+## 🐳 Docker
+
+### Build & Run
+
+```bash
+docker build -t clouddevopsproject:latest -f dockerfile .
+docker run -p 5000:5000 clouddevopsproject:latest
+```
+
+📸 Screenshot:
+![Docker Container](assets/docker.png)
+
+---
+
+## ⚡ GitHub Actions CI/CD Pipeline
+
+Automates build, scan, and deployment to Kubernetes.
+
+### Steps Overview
+
+1. Checkout repo
+2. Setup Docker
+3. Build Docker image
+4. Scan image with Trivy
+5. Login to DockerHub
+6. Push image
+7. Delete local image
+8. Update Kubernetes manifests
+9. Commit & push deployment update
+
+📸 Screenshot:
+![GitHub Actions Workflow](assets/github_actions.png)
+
+---
+
+## 🚀 ArgoCD Deployment
+
+* **Repository:** `https://github.com/mohamedmotaz285/CloudDevOpsProject.git`
+* **Branch:** `main`
+* **Application Name:** `devops`
+* **Namespace:** `ivolve`
+* **Sync Policy:** Auto-sync ✅
+
+### Steps
+
+```bash
+argocd app sync devops
+```
+
+📸 Screenshot:
+![ArgoCD Dashboard](assets/argocd.png)
+
+---
+
+## ⚠️ Notes
+
+> Ensure AWS credentials are configured for Terraform and kubectl.
+> Environment variables may be required for app configuration.
+> Do not store secrets or sensitive data directly in the repository.
+
+---
+
+## 🧑‍💻 Author
+
+**Mohamed Motaz**
+GitHub: [mohamedmotaz285](https://github.com/mohamedmotaz285)
+
+---
+
+This README provides a **visual, step-by-step guide** for deploying and maintaining CloudDevOpsProject using modern DevOps practices. 🌟
