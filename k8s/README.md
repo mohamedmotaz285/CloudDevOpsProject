@@ -39,7 +39,8 @@ k8s/
 
 ### 📸 Screenshots
 
-(![Screenshot 2025-11-19 203251.png]()
+(<img width="984" height="266" alt="WhatsApp Image 2025-11-19 at 10 40 04 PM" src="https://github.com/user-attachments/assets/83343657-7bba-4b4b-b69d-a340d7e0ad41" />
+)
 
 ---
 
