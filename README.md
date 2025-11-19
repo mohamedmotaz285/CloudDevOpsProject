@@ -1,4 +1,5 @@
-![CloudDevOpsProject Banner](assets/banner.png)
+(<img width="1920" height="1020" alt="Screenshot 2025-11-19 203251" src="https://github.com/user-attachments/assets/af5ad5f0-b6b3-4b41-9e78-068248a4276d" />
+)
 
 # ☁️💻 CloudDevOpsProject
 
