@@ -38,7 +38,7 @@ variable "server_ami" {
 variable "server_instance_type" {
   
   type        = string
-  default     = "t3.micro"
+  default     = "t3.medium"
 }
 
 variable "server_key_name" {
