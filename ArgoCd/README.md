@@ -29,7 +29,8 @@ We use **ArgoCD** to automate the deployment of the CloudDevOpsProject applicati
 
 ### 📸 Screenshots
 
-![ArgoCD Dashboard](PLACEHOLDER_IMAGE_URL)
+![ArgoCD Dashboard](<img width="1600" height="732" alt="WhatsApp Image 2025-11-19 at 10 20 16 PM" src="https://github.com/user-attachments/assets/2dd7c172-15de-4dea-ba7d-2bc70d2b703f" />
+)
 
 > Replace `PLACEHOLDER_IMAGE_URL` with your screenshot showing the ArgoCD dashboard and the application synced status.
 
