@@ -72,6 +72,10 @@ terraform apply
 (<img width="2131" height="1801" alt="devops_1 drawio" src="https://github.com/user-attachments/assets/72505ca7-ab3c-4084-afe5-e0c08dfa54c8" />
 )
 
+(<img width="563" height="66" alt="WhatsApp iImage 2025-11-19 at 10 40 50 PM" src="https://github.com/user-attachments/assets/09e8280e-9f90-4b32-9e09-d55231884ced" />
+
+)
+
 ---
 
 ## ☸️ Kubernetes Deployment
@@ -106,6 +110,9 @@ docker run -p 5000:5000 clouddevopsproject:latest
 📸 Screenshot:
 (<img width="1600" height="732" alt="WhatsApp Image 2025-11-19 at 10 19 25 PM" src="https://github.com/user-attachments/assets/b58aa824-9e46-4a73-aa5c-04d8e2643931" />
 )
+
+(<img width="1600" height="732" alt="WhatsApp Image 2025-11-19 at 10 22 50 PM" src="https://github.com/user-attachments/assets/f0902f33-1038-4d14-92b8-0db86f5fa825" />
+
 
 ---
 
