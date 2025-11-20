@@ -64,12 +64,13 @@ terraform apply
 * **Cluster Name:** `clouddevops-eks-cluster`
 * **Node Group Name:** `clouddevops-eks-nodes`
 * **VPC ID:** `vpc-013065ced72870b6d`
-* **Public Subnets:** `subnet-0c636f3c2d048c4e2`, `subnet-0108ccd0d24b5d8a9`
+* **Public Subnets:** `subnet-0c636f3c2d048c4e2`, "subnet-0108ccd0d24b5d8a9"
 * **Private Subnets:** `subnet-09f159c005c055b6c`, `subnet-05510b0d3a5b11e09`
-* **Server Public IP:** `44.204.107.227`
+* **Server Public IP:** `44.203.33.239`
 
 📸 Screenshot / Diagram:
-![Terraform Infrastructure](assets/terraform.png)
+(<img width="2131" height="1801" alt="devops_1 drawio" src="https://github.com/user-attachments/assets/72505ca7-ab3c-4084-afe5-e0c08dfa54c8" />
+)
 
 ---
 
