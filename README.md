@@ -136,6 +136,10 @@ Automates build, scan, and deployment to Kubernetes.
 (<img width="1920" height="1020" alt="Screenshot 2025-11-19 220314" src="https://github.com/user-attachments/assets/3c5ceb93-1a3a-4ccb-8cc4-70f51305a705" />
 )
 
+(<img width="591" height="1280" alt="WhatsApp Image 2025-11-20 at 5 30 33 PM" src="https://github.com/user-attachments/assets/6522b686-4a11-46ba-ac0d-a280550120d3" />
+
+)
+
 ---
 
 ## 🚀 ArgoCD Deployment
