@@ -57,9 +57,8 @@ terraform/
 
 ### 📸 Screenshot / Diagram
 
-![Terraform Infrastructure](PLACEHOLDER_IMAGE_URL)
-
-> Replace `PLACEHOLDER_IMAGE_URL` with a screenshot of Terraform plan/apply or a diagram of your AWS architecture.
+(<img width="1600" height="732" alt="WhatsApp Image 2025-11-19 at 10 40 39 PM" src="https://github.com/user-attachments/assets/2c3d77f6-672f-4290-8ad8-4e8907862710" />
+)
 
 ---
 
