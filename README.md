@@ -5,7 +5,7 @@
 
 *A full-stack Cloud & DevOps application with CI/CD, Terraform, Docker, Kubernetes & ArgoCD*
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mohamedmotaz285/CloudDevOpsProject/ci-cd.yml?branch=main)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mohamedmotaz285/CloudDevOpsProject/main.yml?branch=main)
 ![Docker Pulls](https://img.shields.io/docker/pulls/mohamedmotaz350/finalapplication)
 ![License](https://img.shields.io/github/license/mohamedmotaz285/CloudDevOpsProject)
 
