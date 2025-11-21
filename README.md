@@ -1,13 +1,33 @@
 (<img width="1920" height="1020" alt="Screenshot 2025-11-19 203251" src="https://github.com/user-attachments/assets/af5ad5f0-b6b3-4b41-9e78-068248a4276d" />
 )
 
-# ☁️💻 CloudDevOpsProject
+# 🚀 **DevOps Graduation Project**
+### National Telecommunication Institute (NTI)  
+### In Collaboration with **iVolve Technologies**
 
-*A full-stack Cloud & DevOps application with CI/CD, Terraform, Docker, Kubernetes & ArgoCD*
+---
+
+### 🔥 Technologies & Tools
+
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=Amazon-AWS&logoColor=white)
+![EKS](https://img.shields.io/badge/EKS-FF9900?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![ArgoCD](https://img.shields.io/badge/ArgoCD-FE4F00?style=for-the-badge&logo=argo&logoColor=white)
+![GitOps](https://img.shields.io/badge/GitOps-000000?style=for-the-badge&logo=git&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
+![IAC](https://img.shields.io/badge/IaC-000000?style=for-the-badge&logo=terraform&logoColor=white)
+
+---
+
+### 📊 Project Status
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mohamedmotaz285/CloudDevOpsProject/main.yml?branch=main)
 ![Docker Pulls](https://img.shields.io/docker/pulls/mohamedmotaz350/finalapplication)
 ![License](https://img.shields.io/github/license/mohamedmotaz285/CloudDevOpsProject)
+
+</div>
 
 ---
 
