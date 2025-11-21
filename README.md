@@ -69,7 +69,8 @@ terraform apply
 * **Server Public IP:** `44.203.33.239`
 
 📸 Screenshot / Diagram:
-(<img width="2131" height="1801" alt="devops_1 drawio" src="https://github.com/user-attachments/assets/72505ca7-ab3c-4084-afe5-e0c08dfa54c8" />
+(<img width="2131" height="1801" alt="devops-1 drawio" src="https://github.com/user-attachments/assets/f2f2db8d-e03f-4e4d-9ef2-820f002bdae2" />
+>
 )
 
 (<img width="563" height="66" alt="WhatsApp iImage 2025-11-19 at 10 40 50 PM" src="https://github.com/user-attachments/assets/09e8280e-9f90-4b32-9e09-d55231884ced" />
